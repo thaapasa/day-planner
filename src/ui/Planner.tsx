@@ -2,29 +2,47 @@ import React from 'react';
 import {Circle, G, Svg, Path} from 'react-native-svg';
 import {Colors} from './Colors';
 import {pointOnCircle} from 'app/data/Coordinates';
+import {Schedule, Task} from 'app/data/Schedule';
+import {toMinutesInDay} from 'app/data/Time';
+
+const TaskColors = [Colors.lilac, Colors.blue, Colors.yellow, Colors.orange];
 
 const radius = 90;
-export const Planner = ({size}: {size: number}) => {
+export const Planner = ({
+  size,
+  schedule,
+}: {
+  size: number;
+  schedule: Schedule;
+}) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 200 200">
       <G stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <Circle
-          stroke={Colors.yellow}
+          stroke={Colors.lightGray}
           strokeWidth="16"
           cx="100"
           cy="100"
           r={radius}
         />
-        <Arc a1={-70} a2={20} color={Colors.lilac} />
-        <Arc a1={20} a2={50} color={Colors.blue} />
+        {schedule.tasks.map((t, i) => (
+          <Arc key={t.id} task={t} index={i} />
+        ))}
       </G>
     </Svg>
   );
 };
 
-const Arc = ({a1, a2, color}: {a1: number; a2: number; color: string}) => {
+const midPos = toMinutesInDay('12:00');
+
+const Arc = ({task, index}: {task: Task; index: number}) => {
+  const t1 = toMinutesInDay(task.startTime);
+  const t2 = toMinutesInDay(task.endTime);
+  const a1 = ((t1 - midPos) * 180) / midPos;
+  const a2 = ((t2 - midPos) * 180) / midPos;
   const p1 = pointOnCircle(a1, radius, 100, 100);
   const p2 = pointOnCircle(a2, radius, 100, 100);
+  const color = TaskColors[index % TaskColors.length];
   return (
     <Path
       stroke={color}

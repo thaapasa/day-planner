@@ -2,11 +2,12 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Colors} from 'app/ui/Colors';
 import {DayScheduleView} from './ui/Schedule';
+import {schedule} from './data/Schedule';
 
 export const MainPage = () => {
   return (
     <View style={styles.mainPage}>
-      <DayScheduleView />
+      <DayScheduleView schedule={schedule} />
     </View>
   );
 };

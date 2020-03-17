@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Planner} from './Planner';
+import {Schedule} from 'app/data/Schedule';
 
-export const DayScheduleView = () => {
+export const DayScheduleView = ({schedule}: {schedule: Schedule}) => {
   return (
     <View style={styles.container}>
-      <Planner size={320} />
+      <Planner size={320} schedule={schedule} />
     </View>
   );
 };
