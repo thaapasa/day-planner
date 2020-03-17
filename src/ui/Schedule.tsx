@@ -1,19 +1,21 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import {Colors} from 'app/ui/Colors';
+import {StyleSheet, View} from 'react-native';
+import {Planner} from './Planner';
 
 export const DayScheduleView = () => {
   return (
     <View style={styles.container}>
-      <Text>Moi</Text>
+      <Planner size={320} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.blue,
     width: 320,
     height: 320,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
