@@ -78,6 +78,7 @@
 *.tmpl text
 *.lst text
 *.prefs text
+*.pbxproj -text
 
 # Enforce specific EOL characters
 
