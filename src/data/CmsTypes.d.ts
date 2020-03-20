@@ -6,9 +6,10 @@ export interface CmsImage {
     contentType: string;
     details: {
       size: number;
-      fileName: string;
-      url: string;
     };
+    fileName: string;
+    url: string;
+    title: string;
   };
   title: string;
 }
