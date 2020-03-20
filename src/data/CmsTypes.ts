@@ -1,5 +1,5 @@
-import {Entry} from 'contentful';
-import {ISOTime} from './Time';
+import { Entry } from 'contentful';
+import { ISOTime } from './Time';
 
 export interface CmsImage {
   file: {

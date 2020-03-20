@@ -1,6 +1,6 @@
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-import {MainPage} from 'app/MainPage';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { MainPage } from 'app/MainPage';
 
 const App = () => {
   return (

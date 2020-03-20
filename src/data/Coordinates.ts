@@ -3,7 +3,12 @@ export interface Coordinate {
   y: number;
 }
 
-export function pointOnCircle(angleDegrees: number, r: number, offsetX: number, offsetY: number): Coordinate {
+export function pointOnCircle(
+  angleDegrees: number,
+  r: number,
+  offsetX: number,
+  offsetY: number,
+): Coordinate {
   const angle = (angleDegrees * Math.PI) / 180;
   return {
     x: r * Math.sin(angle) + (offsetX ?? 0),

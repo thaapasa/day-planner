@@ -1,9 +1,9 @@
 import React from 'react';
-import {Circle, G, Svg, Path} from 'react-native-svg';
-import {Colors} from './Colors';
-import {pointOnCircle} from 'app/data/Coordinates';
-import {Schedule, Task} from 'app/data/Schedule';
-import {toMinutesInDay} from 'app/data/Time';
+import { Circle, G, Svg, Path } from 'react-native-svg';
+import { Colors } from './Colors';
+import { pointOnCircle } from 'app/data/Coordinates';
+import { Schedule, Task } from 'app/data/Schedule';
+import { toMinutesInDay } from 'app/data/Time';
 
 const TaskColors = [Colors.lilac, Colors.blue, Colors.yellow, Colors.orange];
 
@@ -35,7 +35,7 @@ export const Planner = ({
 
 const midPos = toMinutesInDay('12:00');
 
-const Arc = ({task, index}: {task: Task; index: number}) => {
+const Arc = ({ task, index }: { task: Task; index: number }) => {
   const t1 = toMinutesInDay(task.startTime);
   const t2 = toMinutesInDay(task.endTime);
   const a1 = ((t1 - midPos) * 180) / midPos;

@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Planner} from './Planner';
-import {Schedule} from 'app/data/Schedule';
-import {cmsClient} from 'app/data/CmsClient';
+import { StyleSheet, View } from 'react-native';
+import { Planner } from './Planner';
+import { Schedule } from 'app/data/Schedule';
+import { cmsClient } from 'app/data/CmsClient';
 
-export const DayScheduleView = ({schedule}: {schedule: Schedule}) => {
+export const DayScheduleView = ({ schedule }: { schedule: Schedule }) => {
   React.useEffect(() => {
     cmsClient.getSchedule();
   }, []);
