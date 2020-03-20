@@ -1,16 +1,20 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { Planner } from './Planner';
 import { Schedule } from 'app/data/Schedule';
-import { cmsClient } from 'app/data/CmsClient';
 
-export const DayScheduleView = ({ schedule }: { schedule: Schedule }) => {
-  React.useEffect(() => {
-    cmsClient.getSchedule();
-  }, []);
+export const DayScheduleView = ({
+  schedule,
+}: {
+  schedule: Schedule | null;
+}) => {
   return (
     <View style={styles.container}>
-      <Planner size={320} schedule={schedule} />
+      {schedule ? (
+        <Planner size={320} schedule={schedule} />
+      ) : (
+        <Text>Lataillaan...</Text>
+      )}
     </View>
   );
 };
