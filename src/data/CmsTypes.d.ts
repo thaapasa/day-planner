@@ -1,5 +1,6 @@
 import { Entry } from 'contentful';
 import { ISOTime } from './Time';
+import { Colors } from 'app/ui/Colors';
 
 export interface CmsImage {
   file: {
@@ -16,7 +17,7 @@ export interface CmsImage {
 
 export interface CmsTask {
   name: string;
-  color: string;
+  color: keyof typeof Colors;
   startTime?: ISOTime;
   endTime?: ISOTime;
   image?: Entry<CmsImage>;

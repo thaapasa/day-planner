@@ -42,7 +42,7 @@ const Arc = ({ task, index }: { task: Task; index: number }) => {
   const a2 = ((t2 - midPos) * 180) / midPos;
   const p1 = pointOnCircle(a1, radius, 100, 100);
   const p2 = pointOnCircle(a2, radius, 100, 100);
-  const color = TaskColors[index % TaskColors.length];
+  const color = task.color ?? TaskColors[index % TaskColors.length];
   return (
     <Path
       stroke={color}
