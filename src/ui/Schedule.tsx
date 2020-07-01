@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Planner } from './Planner';
 import { Schedule } from 'app/data/Schedule';
 import { TaskImages } from './TaskImages';

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Circle, G, Svg, Path } from 'react-native-svg';
+import { Circle, G, Path, Svg } from 'react-native-svg';
 import { Colors } from './Colors';
 import { pointOnCircle } from 'app/data/Coordinates';
 import { Schedule, Task } from 'app/data/Schedule';
-import { toMinutesInDay, dayMiddleMinutes } from 'app/data/Time';
+import { dayMiddleMinutes, toMinutesInDay } from 'app/data/Time';
 
 const TaskColors = [Colors.lilac, Colors.blue, Colors.yellow, Colors.orange];
 
